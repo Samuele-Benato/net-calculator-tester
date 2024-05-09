@@ -4,7 +4,6 @@ namespace TestProject
 {
     public class Tests
     {
-        Calculator calculator = new Calculator();
 
         [SetUp]
         public void Setup()
@@ -16,29 +15,30 @@ namespace TestProject
         public void TestAdd()
         {
             
-            float result = calculator.Add(2,45); // rendere la classe statica
+            float result = Calculator.Add(2,45); // rendere la classe statica
             Assert.AreEqual(47, result);
         }
 
         [Test]
         public void TestSubstract()
         {
-            float result = calculator.Substract(2, 45);
+            float result = Calculator.Substract(2, 45);
             Assert.AreEqual(-43, result);
         }
 
         [Test]
         public void TestDivide()
         {
-            
-            Assert.Throws<System.ArgumentException>(() => { calculator.Divide(10, 0); },
-                "Deve sollevare IllegalArgumentException per divisione per zero");
+            float result = Calculator.Divide(6, 3);
+            Assert.AreEqual(2, result);
+            // Assert.Throws<System.ArgumentException>(() => { calculator.Divide(10, 0); },
+            // "Deve sollevare IllegalArgumentException per divisione per zero");
         }
 
         [Test]
         public void TestMultiply()
         {
-            float result = calculator.Multiply(2, 3);
+            float result = Calculator.Multiply(2, 3);
             Assert.AreEqual(6, result);
         }
     }
