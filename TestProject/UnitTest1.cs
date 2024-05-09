@@ -30,8 +30,9 @@ namespace TestProject
         [Test]
         public void TestDivide()
         {
-            float result = calculator.Divide(6, 2);
-            Assert.AreEqual(3, result);
+            
+            Assert.Throws<System.ArgumentException>(() => { calculator.Divide(10, 0); },
+                "Deve sollevare IllegalArgumentException per divisione per zero");
         }
 
         [Test]
